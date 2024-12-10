@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gold"
+    tools:context=".MainActivity">
+
+    <!-- Existing Buttons and EditTexts -->
+    <Button
+        android:id="@+id/buttonCalculateTip"
+        android:layout_width="206dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326" />
+
+    <Button
+        android:id="@+id/buttonMinusTip"
+        android:layout_width="57dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="72dp"
+        android:onClick="decreaseTip"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttonPlusTip"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="72dp"
+        android:onClick="increaseTip"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@id/buttonMinusTip"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextNumberDecimalBillAmount"
+        android:layout_width="159dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="4dp"
+        android:hint="Bill Amount"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextNumberTipPercent"
+        android:layout_width="156dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="72dp"
+        android:hint="Tip %"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextNumberDecimalTipAmount"
+        android:layout_width="166dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="124dp"
+        android:hint="Tip Amount"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttonRoundTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Round Tip"
+        android:onClick="roundTipAmount"
+        app:layout_constraintStart_toEndOf="@id/editTextNumberDecimalTipAmount"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberDecimalTipAmount" />
+
+
+    <EditText
+        android:id="@+id/editTextNumberDecimalTotalDue"
+        android:layout_width="154dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="12dp"
+        android:hint="Total Due"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumberDecimalTipAmount" />
+
+
+    <TextView
+        android:id="@+id/textViewBillAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:text="Bill Amount"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/editTextNumberDecimalBillAmount"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberDecimalBillAmount" />
+
+    <TextView
+        android:id="@+id/textViewTipPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:text="Tip Percent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/editTextNumberTipPercent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberTipPercent" />
+
+
+    <TextView
+        android:id="@+id/textViewTAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:text="Tip Amount"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/editTextNumberDecimalTipAmount"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberDecimalTipAmount" />
+
+
+    <TextView
+        android:id="@+id/textViewTotalDue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:text="Total Bill"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/editTextNumberDecimalTotalDue"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberDecimalTotalDue" />
+
+
+    <Button
+        android:id="@+id/buttonRoundBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Round Bill"
+        android:onClick="roundBillAmount"
+        app:layout_constraintStart_toEndOf="@id/editTextNumberDecimalTotalDue"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberDecimalTotalDue" />
+
+
+    <!-- New EditText for Number of People -->
+    <EditText
+        android:id="@+id/editTextNumberPeople"
+        android:layout_width="156dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="176dp"
+        android:hint="Number of People"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumberDecimalTotalDue" />
+
+
+    <!-- New Button to Split Bill -->
+    <Button
+        android:id="@+id/buttonSplitBill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Split Bill"
+        android:onClick="splitBill"
+        app:layout_constraintStart_toEndOf="@id/editTextNumberPeople"
+        app:layout_constraintTop_toTopOf="@id/editTextNumberPeople" />
+
+
+    <!-- New TextView for Each Person's Contribution -->
+    <TextView
+        android:id="@+id/textViewPersonContribution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="112dp"
+        android:text="Each Person Pays:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextNumberPeople" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
